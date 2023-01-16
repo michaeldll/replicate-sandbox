@@ -12,7 +12,7 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // create prediction
-    const response = await fetch("/api/riffusion", {
+    const response = await fetch("/api/sdiffusion", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,7 +34,7 @@ export default function Home() {
     ) {
       await sleep(1000);
       // get specific prediction
-      const response = await fetch("/api/riffusion/" + prediction.id);
+      const response = await fetch("/api/sdiffusion/" + prediction.id);
       prediction = await response.json();
       if (response.status !== 200) {
         setError(prediction.detail);
@@ -53,8 +53,8 @@ export default function Home() {
 
       <p>
         Dream something with{" "}
-        <a href="https://replicate.com/hmartiro/riffusion">
-          riffusion
+        <a href="https://replicate.com/stability-ai/stable-diffusion">
+          stability-ai/stable-diffusion
         </a>
         :
       </p>
@@ -63,7 +63,7 @@ export default function Home() {
         <input
           type="text"
           name="prompt"
-          placeholder="Enter a prompt to predict"
+          placeholder="Enter a prompt to display an image"
         />
         <button type="submit">Go!</button>
       </form>
@@ -73,18 +73,14 @@ export default function Home() {
       {prediction && (
         <div>
           {prediction.output && (
-            <>
-              <p>Result :</p>
-              <audio
-                controls
-                src={prediction.output.audio}>
-                <a href={prediction.output.audio}>
-                  Download audio
-                </a>
-              </audio>
-              <p>Spectogram :</p>
-              <img src={prediction.output.spectrogram} alt="spectogram" />
-            </>
+            <div className={styles.imageWrapper}>
+              <Image
+                fill
+                src={prediction.output[prediction.output.length - 1]}
+                alt="output"
+                sizes="100vw"
+              />
+            </div>
           )}
           <p>status: {prediction.status}</p>
         </div>
