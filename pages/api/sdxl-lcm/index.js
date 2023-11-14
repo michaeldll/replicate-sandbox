@@ -10,7 +10,7 @@ export default async function handler(req, res) {
         "fbbd475b1084de80c47c35bfe4ae64b964294aa7e237e6537eed938cfd24903d",
       // This is the text prompt that will be submitted by a form on the frontend
       input: {
-        prompt: "An astronaut riding a rainbow unicorn, cinematic, dramatic"
+        prompt: req.body.prompt
       }
     }),
   });
