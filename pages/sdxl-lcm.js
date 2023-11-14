@@ -19,6 +19,10 @@ export default function Home() {
       },
       body: JSON.stringify({
         prompt: e.target.prompt.value,
+        width: e.target.width.value,
+        height: e.target.height.value,
+        no_lcm: e.target["no-lcm"].checked,
+        steps: e.target.steps.value,
       }),
     });
     let prediction = await response.json();
@@ -32,7 +36,7 @@ export default function Home() {
       prediction.status !== "succeeded" &&
       prediction.status !== "failed"
     ) {
-      await sleep(1000);
+      await sleep(200);
       // get specific prediction
       const response = await fetch("/api/sdxl-lcm/" + prediction.id);
       prediction = await response.json();
@@ -52,7 +56,7 @@ export default function Home() {
       </Head>
 
       <p>
-        Estimate depth with {" "}
+        Generate image {" "}
         <a href="https://replicate.com/lucataco/sdxl-lcm/api?tab=node">
           sdxl-lcm
         </a>
@@ -60,12 +64,22 @@ export default function Home() {
       </p>
 
       <form className={styles.form} onSubmit={handleSubmit}>
-        <input
+        <textarea
           type="text"
           name="prompt"
           placeholder="Enter a prompt"
+          rows="8" cols="100"
           defaultValue={"Close up photography of astronaut riding a rainbow unicorn, cinematic, dramatic, leica 35mm summilux"}
         />
+        <label>Modèle lourd:</label>
+        <input type="checkbox" name="no-lcm" />
+        <label>Qualité:</label>
+        <input type="number" name="steps" defaultValue={19} placeholder="19" min="1" max="50" step={1} />
+        <label>Width:</label>
+        <input type="number" name="width" defaultValue={2048} placeholder="2048" min="1024" max="2048" step={1} />
+        <label>Height:</label>
+        <input type="number" name="height" defaultValue={2048} placeholder="2048" min="1024" max="2048" step={1} />
+        <br />
         <button type="submit">Go!</button>
       </form>
 

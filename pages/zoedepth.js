@@ -67,7 +67,7 @@ export default function Home() {
           placeholder="Enter a model type"
           defaultValue={"ZoeD_N"}
         />
-        <input
+        <textarea
           type="text"
           name="img"
           placeholder="Enter an image HTTPS URL"
