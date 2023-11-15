@@ -15,6 +15,7 @@ export default async function handler(req, res) {
         num_inference_steps: 19,
         width: parseFloat(req.body.width),
         height: parseFloat(req.body.height),
+        disable_safety_checker: true
       }
     }),
   });

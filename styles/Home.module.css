@@ -11,12 +11,17 @@
   flex-direction: column;
 }
 
+.form textarea{
+  margin-bottom: .5rem;
+}
+
 .form input {
   width: 100%;
   border: 1px solid #000;
   border-radius: 0.25rem;
   font-size: 1.3rem;
   margin-right: 1rem;
+  margin-bottom: .5rem;
 }
 
 .form button {
@@ -32,4 +37,8 @@
   width: 100%;
   aspect-ratio: 1 / 1;
   position: relative;
+}
+
+.nav li{
+  font-size: 1rem;
 }

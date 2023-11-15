@@ -2,10 +2,11 @@ import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Nav from "../components/Nav";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-export default function Home() {
+export default function Sdxl() {
   const [prediction, setPrediction] = useState(null);
   const [error, setError] = useState(null);
 
@@ -55,13 +56,11 @@ export default function Home() {
         <title>Replicate + Next.js</title>
       </Head>
 
-      <p>
-        Generate image {" "}
-        <a href="https://replicate.com/lucataco/sdxl-lcm/api?tab=node">
-          sdxl-lcm
-        </a>
-        :
-      </p>
+      <Nav />
+
+      <h1>
+        RORO GENERATOR {" "}
+      </h1>
 
       <form className={styles.form} onSubmit={handleSubmit}>
         <textarea
@@ -69,18 +68,20 @@ export default function Home() {
           name="prompt"
           placeholder="Enter a prompt"
           rows="8" cols="100"
-          defaultValue={"Close up photography of astronaut riding a rainbow unicorn, cinematic, dramatic, leica 35mm summilux"}
+          defaultValue={"Close up photography of an astronaut riding a rainbow unicorn, cinematic, dramatic, leica 35mm summilux"}
         />
         <label>Modèle lourd:</label>
         <input type="checkbox" name="no-lcm" />
         <label>Qualité:</label>
         <input type="number" name="steps" defaultValue={19} placeholder="19" min="1" max="50" step={1} />
         <label>Width:</label>
-        <input type="number" name="width" defaultValue={2048} placeholder="2048" min="1024" max="2048" step={1} />
+        <input type="number" name="width" defaultValue={2048} placeholder="2048" min="1" max="2048" step={1} />
         <label>Height:</label>
-        <input type="number" name="height" defaultValue={2048} placeholder="2048" min="1024" max="2048" step={1} />
-        <br />
+        <input type="number" name="height" defaultValue={2048} placeholder="2048" min="1" max="2048" step={1} />
+        <label>Image URL:</label>
+        <input type="url"></input>
         <button type="submit">Go!</button>
+        <br />
       </form>
 
       {error && <div className="error">{error}</div>}
@@ -100,6 +101,13 @@ export default function Home() {
           <p>status: {prediction.status}</p>
         </div>
       )}
+
+      <footer>
+        Model:{" "}
+        <a href="https://replicate.com/lucataco/sdxl-lcm/api?tab=node">
+          sdxl-lcm
+        </a>
+      </footer>
     </div>
   );
 }

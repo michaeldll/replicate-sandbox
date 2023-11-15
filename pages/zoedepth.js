@@ -2,10 +2,11 @@ import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Nav from "../components/Nav";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-export default function Home() {
+export default function Zoedepth() {
   const [prediction, setPrediction] = useState(null);
   const [error, setError] = useState(null);
 
@@ -51,6 +52,8 @@ export default function Home() {
       <Head>
         <title>Replicate + Next.js</title>
       </Head>
+
+      <Nav />
 
       <p>
         Estimate depth with {" "}

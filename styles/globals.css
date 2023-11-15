@@ -1,3 +1,7 @@
 .error {
     color: red;
 }
+
+.nav li{
+    font-size: 1rem;
+}
