@@ -24,6 +24,8 @@ export default function Sdxl() {
         height: e.target.height.value,
         no_lcm: e.target["no-lcm"].checked,
         steps: e.target.steps.value,
+        image: e.target.image.value,
+        prompt_strength: e.target.prompt_strength.value,
       }),
     });
     let prediction = await response.json();
@@ -63,6 +65,7 @@ export default function Sdxl() {
       </h1>
 
       <form className={styles.form} onSubmit={handleSubmit}>
+        <label>Prompt:</label>
         <textarea
           type="text"
           name="prompt"
@@ -72,14 +75,16 @@ export default function Sdxl() {
         />
         <label>Modèle lourd:</label>
         <input type="checkbox" name="no-lcm" />
-        <label>Qualité:</label>
-        <input type="number" name="steps" defaultValue={19} placeholder="19" min="1" max="50" step={1} />
-        <label>Width:</label>
-        <input type="number" name="width" defaultValue={2048} placeholder="2048" min="1" max="2048" step={1} />
-        <label>Height:</label>
-        <input type="number" name="height" defaultValue={2048} placeholder="2048" min="1" max="2048" step={1} />
+        <label>Qualité (max: 50):</label>
+        <input type="number" name="steps" defaultValue={4} placeholder="19" min="1" max="50" step={1} />
+        <label>Width (max: 2048):</label>
+        <input type="number" name="width" defaultValue={1024} placeholder="2048" min="1" max="2048" step={1} />
+        <label>Height (max: 2048):</label>
+        <input type="number" name="height" defaultValue={1024} placeholder="2048" min="1" max="2048" step={1} />
         <label>Image URL:</label>
-        <input type="url"></input>
+        <input name="image" type="url"></input>
+        <label>Influence du prompt quand une image est présente:</label>
+        <input type="number" name="prompt_strength" defaultValue={0.5} placeholder="0.5" min="0" max="1" step={0.01} />
         <button type="submit">Go!</button>
         <br />
       </form>
