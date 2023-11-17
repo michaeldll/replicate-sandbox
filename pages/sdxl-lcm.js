@@ -25,7 +25,7 @@ export default function Sdxl() {
           height: e.target.height.value,
           no_lcm: e.target["no-lcm"].checked,
           steps: e.target.steps.value,
-          image: ee.target.image.value,
+          image: e.target.image.value,
           prompt_strength: e.target.prompt_strength.value,
         } : {
           prompt: e.target.prompt.value,
