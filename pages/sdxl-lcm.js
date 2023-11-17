@@ -18,15 +18,23 @@ export default function Sdxl() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        prompt: e.target.prompt.value,
-        width: e.target.width.value,
-        height: e.target.height.value,
-        no_lcm: e.target["no-lcm"].checked,
-        steps: e.target.steps.value,
-        image: e.target.image.value,
-        prompt_strength: e.target.prompt_strength.value,
-      }),
+      body: JSON.stringify(
+        e.target.image.value ? {
+          prompt: e.target.prompt.value,
+          width: e.target.width.value,
+          height: e.target.height.value,
+          no_lcm: e.target["no-lcm"].checked,
+          steps: e.target.steps.value,
+          image: ee.target.image.value,
+          prompt_strength: e.target.prompt_strength.value,
+        } : {
+          prompt: e.target.prompt.value,
+          width: e.target.width.value,
+          height: e.target.height.value,
+          no_lcm: e.target["no-lcm"].checked,
+          steps: e.target.steps.value,
+          prompt_strength: e.target.prompt_strength.value,
+        }),
     });
     let prediction = await response.json();
     if (response.status !== 201) {
@@ -82,14 +90,14 @@ export default function Sdxl() {
         <label>Height (max: 2048):</label>
         <input type="number" name="height" defaultValue={1024} placeholder="2048" min="1" max="2048" step={1} />
         <label>Image URL:</label>
-        <input name="image" type="url"></input>
+        <input name="image" type="text"></input>
         <label>Influence du prompt quand une image est présente:</label>
         <input type="number" name="prompt_strength" defaultValue={0.5} placeholder="0.5" min="0" max="1" step={0.01} />
         <button type="submit">Go!</button>
         <br />
       </form>
 
-      {error && <div className="error">{error}</div>}
+      {!prediction && error && <div className="error">{error}</div>}
 
       {prediction && (
         <div>
