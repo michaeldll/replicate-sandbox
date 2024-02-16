@@ -69,7 +69,7 @@ export default function Sdxl() {
       <Nav />
 
       <h1>
-        RORO GENERATOR {" "}
+        Stable Diffusion XL + LCM
       </h1>
 
       <form className={styles.form} onSubmit={handleSubmit}>

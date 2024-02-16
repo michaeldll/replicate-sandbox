@@ -33,9 +33,13 @@
   font-size: 1.3rem;
 }
 
+.imageWrapperWrapper{
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .imageWrapper {
   width: 100%;
-  aspect-ratio: 1 / 1;
   position: relative;
 }
 

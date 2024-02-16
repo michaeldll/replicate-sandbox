@@ -5,3 +5,7 @@
 .nav li{
     font-size: 1rem;
 }
+
+img{
+    height: auto!important;
+}

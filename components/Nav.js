@@ -7,16 +7,19 @@ export default function Nav() {
             <Link href="/">Home</Link>
             <ul>
                 <li>
-                    <Link href="/riffusion">Riffusion</Link>
+                    <Link href="/riffusion">Music</Link>
                 </li>
                 <li>
-                    <Link href="/zoedepth">Zoe Depth</Link>
+                    <Link href="/zoedepth">Depth</Link>
+                </li>
+                <li>
+                    <Link href="/esrgan">Upscale</Link>
                 </li>
                 <li>
                     <Link href="/sdiffusion">Stable Diffusion 2.0</Link>
                 </li>
                 <li>
-                    <Link href="/sdxl-lcm">Stable Diffusion XL + LCM</Link>
+                    <Link href="/sdxl-lcm">Stable Diffusion XL</Link>
                 </li>
             </ul>
             <hr></hr>
