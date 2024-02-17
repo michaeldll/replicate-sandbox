@@ -13,7 +13,7 @@ export default function Esrgan() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         // create prediction
-        console.log(e.target.face_enhance.value, e.target.image.value, e.target.scale.value);
+        console.log(e.target.face_enhance.checked, e.target.image.value, e.target.scale.value);
         const response = await fetch("/api/esrgan", {
             method: "POST",
             headers: {
@@ -22,7 +22,7 @@ export default function Esrgan() {
             body: JSON.stringify({
                 image: e.target.image.value,
                 scale: parseFloat(e.target.scale.value),
-                face_enhance: e.target.face_enhance.value === 'on' ? true : false,
+                face_enhance: e.target.face_enhance.checked,
             }),
         });
         let prediction = await response.json();
