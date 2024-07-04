@@ -63,7 +63,7 @@ export default function Sdxl() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Replicate + Next.js</title>
+        <title>Bota lá - Stable Diffusion XL</title>
       </Head>
 
       <Nav />

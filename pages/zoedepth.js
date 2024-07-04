@@ -62,7 +62,7 @@ export default function Zoedepth() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Replicate + Next.js</title>
+        <title>Bota lá - Depth</title>
       </Head>
 
       <Nav />

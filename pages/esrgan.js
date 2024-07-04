@@ -65,7 +65,7 @@ export default function Esrgan() {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Replicate + Next.js</title>
+                <title>Bota lá - Upscale</title>
             </Head>
 
             <Nav />

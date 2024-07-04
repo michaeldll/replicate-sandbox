@@ -50,7 +50,7 @@ export default function Riffusion() {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Replicate + Next.js</title>
+                <title>Bota lá - Music</title>
             </Head>
 
             <Nav />

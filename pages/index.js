@@ -6,11 +6,12 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Replicate + Next.js</title>
+        <title>Bota lá</title>
       </Head>
 
       <main>
         <Nav />
+        <h1>Make stuff with aRtIfIcIaL iNtElLiGeNcE 👆</h1>
       </main>
     </div>
   );

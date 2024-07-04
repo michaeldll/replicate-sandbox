@@ -49,7 +49,7 @@ export default function Sdiffusion() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Replicate + Next.js</title>
+        <title>Bota lá - Stable Diffusion 2.0</title>
       </Head>
 
       <Nav />
