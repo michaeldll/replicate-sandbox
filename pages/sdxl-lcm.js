@@ -69,7 +69,7 @@ export default function Sdxl() {
       <Nav />
 
       <h1>
-        Stable Diffusion XL + LCM
+        Stable Diffusion <a href="https://replicate.com/lucataco/sdxl-lcm/api?tab=node">XL + LCM</a>
       </h1>
 
       <form className={styles.form} onSubmit={handleSubmit}>
@@ -81,17 +81,17 @@ export default function Sdxl() {
           rows="8" cols="100"
           defaultValue={"Close up photography of an astronaut riding a rainbow unicorn, cinematic, dramatic, leica 35mm summilux"}
         />
-        <label>Modèle lourd:</label>
-        <input type="checkbox" name="no-lcm" />
-        <label>Qualité (max: 50):</label>
+        {/* <label>Modèle lourd:</label> */}
+        {/* <input type="checkbox" name="no-lcm" /> */}
+        <label>Quality (max: 50):</label>
         <input type="number" name="steps" defaultValue={4} placeholder="19" min="1" max="50" step={1} />
         <label>Width (max: 2048):</label>
         <input type="number" name="width" defaultValue={1024} placeholder="2048" min="1" max="2048" step={1} />
         <label>Height (max: 2048):</label>
         <input type="number" name="height" defaultValue={1024} placeholder="2048" min="1" max="2048" step={1} />
-        <label>Image URL:</label>
+        <label>Reference image2image URL:</label>
         <input name="image" type="text"></input>
-        <label>Influence du prompt quand une image est présente:</label>
+        <label>Prompt influence:</label>
         <input type="number" name="prompt_strength" defaultValue={0.5} placeholder="0.5" min="0" max="1" step={0.01} />
         <button type="submit">Go!</button>
         <br />
@@ -114,13 +114,6 @@ export default function Sdxl() {
           <p>status: {prediction.status}</p>
         </div>
       )}
-
-      <footer>
-        Model:{" "}
-        <a href="https://replicate.com/lucataco/sdxl-lcm/api?tab=node">
-          sdxl-lcm
-        </a>
-      </footer>
     </div>
   );
 }

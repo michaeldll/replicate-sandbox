@@ -11,6 +11,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "replicate.delivery",
       },
+      {
+        protocol: 'http',
+        hostname: 'res.cloudinary.com',
+      },
     ],
   },
 };

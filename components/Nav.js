@@ -5,24 +5,24 @@ export default function Nav() {
     return (
         <nav className='nav'>
             <Link href="/">Home</Link>
-            <ul>
+            <ul className='nav-ul'>
                 <li>
-                    <Link href="/riffusion">Music</Link>
+                    <Link className='nav-link' href="/riffusion">Music</Link>
                 </li>
                 <li>
-                    <Link href="/zoedepth">Depth</Link>
+                    <Link className='nav-link' href="/zoedepth">Depth</Link>
                 </li>
                 <li>
-                    <Link href="/esrgan">Upscale</Link>
+                    <Link className='nav-link' href="/esrgan">Upscale</Link>
                 </li>
                 <li>
-                    <Link href="/sdiffusion">Stable Diffusion 2.0</Link>
+                    <Link className='nav-link' href="/sdiffusion">Stable Diffusion 2.0</Link>
                 </li>
                 <li>
-                    <Link href="/sdxl-lcm">Stable Diffusion XL</Link>
+                    <Link className='nav-link' href="/sdxl-lcm">Stable Diffusion XL</Link>
                 </li>
-            </ul>
+            </ul >
             <hr></hr>
-        </nav>
+        </nav >
     )
 }

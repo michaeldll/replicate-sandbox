@@ -12,6 +12,7 @@ export default function Riffusion() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         // create prediction
         const response = await fetch("/api/riffusion", {
             method: "POST",
@@ -54,13 +55,13 @@ export default function Riffusion() {
 
             <Nav />
 
-            <p>
-                Dream something with{" "}
+            <h1>
+                Music with{" "}
                 <a href="https://replicate.com/hmartiro/riffusion">
                     riffusion
                 </a>
                 :
-            </p>
+            </h1>
 
             <form className={styles.form} onSubmit={handleSubmit}>
                 <input

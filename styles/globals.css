@@ -2,10 +2,27 @@
     color: red;
 }
 
-.nav li{
+.nav li {
     font-size: 1rem;
 }
 
-img{
-    height: auto!important;
+img {
+    height: auto !important;
+}
+
+.nav-ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.nav li {
+    font-size: 1rem;
+    list-style: none;
+}
+
+h1 {
+    font-size: 1.5rem;
 }

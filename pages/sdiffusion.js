@@ -54,13 +54,13 @@ export default function Sdiffusion() {
 
       <Nav />
 
-      <p>
+      <h1>
         Dream something with{" "}
         <a href="https://replicate.com/stability-ai/stable-diffusion">
           stability-ai/stable-diffusion
         </a>
         :
-      </p>
+      </h1>
 
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
